@@ -67,10 +67,10 @@ var flymine   = new intermine.Service({root: 'https://www.flymine.org/flymine'})
     }
   ],
   "constraintLogic": "A and B"
-}
-*/
+}*/
 
-var query     = {
+
+/*var query     = {
   from: 'Gene',
   select: [
     'exons.symbol',
@@ -81,23 +81,61 @@ var query     = {
   where: {
     symbol: 'eve',
     organism: {lookup: 'D. melanogaster'}}
-};
+};*/
 
 
-flymine.rows(query).then(function(rows) {
+var query = {
+  "description": "For a given Gene (or List of Genes) in named organism (default: D. melanogaster) returns the orthologues.  Optionally constrain the organism for which orthologues are shown and the data source from which the orthologue predictions are derived.  Currently  orthologue predictions are available from TreeFam, Panther and the Drosophila 12 genomes project. [keywords: homologue, homolog, paralogue, paralogue, ortholog]",
+  "where": [
+    {
+      "path": "Gene",
+      "op": "LOOKUP",
+      "code": "A",
+      "editable": true,
+      "switchable": false,
+      "switched": "LOCKED",
+      "value": "cdk1",
+      "extraValue": "D. melanogaster"
+    }
+  ],
+  "name": "Gene_Orth",
+  "title": "Gene --> Orthologues",
+  "from": "Gene",
+  "select": [
+    "Gene.primaryIdentifier",
+    "Gene.symbol",
+    "Gene.homologues.homologue.primaryIdentifier",
+    "Gene.homologues.homologue.symbol",
+    "Gene.homologues.homologue.organism.shortName",
+    "Gene.homologues.dataSets.name",
+    "Gene.homologues.type"
+  ],
+  "sortOrder": [
+    {
+      "path": "Gene.symbol",
+      "direction": "ASC"
+    }
+  ],
+  "constraintLogic": "A and B and C"
+}
+/*flymine.rows(query).then(function(rows) {
   console.log("No. of exons: " + rows.length);
   rows.forEach(function printRow(row) {
-    console.log('test', "[" + row[0] + "] " + row[1] + ":" + row[2] + ".." + row[3]);
+    //console.log('test', "[" + row[0] + "] " + row[1] + ":" + row[2] + ".." + row[3]);
     console.log ('row', row);
   });
-});
+});*/
 
 app.get("/", function (request, response) {
-  response.send(query);
+  flymine.rows(query).then(function(rows) {
+  console.log("No. of exons: " + rows.length);
+    rows.map(function printRow(row) {
+      //console.log('test', "[" + row[0] + "] " + row[1] + ":" + row[2] + ".." + row[3]);
+      console.log('row', row)
+      response.send(rows);
+    });
+  });
 });
-
-
-
 
 
 
