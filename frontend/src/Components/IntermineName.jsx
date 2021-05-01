@@ -12,7 +12,7 @@ const IntermineName = ({element}) => {
     event.preventDefault();
     setUrl(element.url);
     console.log(element.url);
-    return <DataTable />;
+    alert(`Data shown from FlyMine, in v2 you will be connected to ${url}`)
   }
 
    

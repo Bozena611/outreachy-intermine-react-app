@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Item from './Item';
+import TableHead from "./TableHead";
+import TableBody from "./TableBody";
 
 
 const DataTable = () => {
@@ -17,19 +18,22 @@ const DataTable = () => {
       });
   }, []);
 
-   console.log('minedata', minedata) 
+   //console.log('minedata', minedata) 
 
   
  if (minedata) {
 
   return (
-    <div>
-      {minedata.map((element, i) => {
-        console.log ('element', element)
-        return <Item key={i} element={element} />;
-      })}
-    </div>
-  );
+    <div className="table-responsive">
+      <table className="table table-bordered table-dark w-auto">
+        <TableHead />
+        {minedata.map((element, i) => {
+          //console.log ('element', element)
+          return <TableBody key={i} element={element} />;
+        })}
+        </table>
+      </div>
+    );
   } else {
     return null
   }
