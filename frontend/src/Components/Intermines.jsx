@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import ListofMines from './ListofMines';
+import DataTable from './DataTable';
 
 const Intermines = () => {
 
 	const [intermineList, setIntermineList] = useState([]);
 
 
-useEffect(() => {
+	useEffect(() => {
     fetch(`https://registry.intermine.org/service/instances`)
       .then(res => res.json())
       .then(data => {
@@ -19,6 +20,7 @@ useEffect(() => {
 		<div>
 			<h1>Test</h1>
 			<ListofMines data={intermineList}/>
+			<DataTable/>
 		</div>
 	)
 }

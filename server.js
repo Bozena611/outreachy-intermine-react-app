@@ -1,9 +1,11 @@
 const express = require("express");
+const cors = require('cors')
 const app = express();
+
 
 const port = 4001;
 
-
+app.use(cors())
 
 // Find and print all the exons associated with eve in D. melanogaster
  
@@ -13,8 +15,13 @@ var intermine = require('imjs');
  
 var flymine   = new intermine.Service({root: 'https://www.flymine.org/flymine'});
 
-/*var query = {
+var query = {
   from: 'Gene',
+  select: ['*']
+};
+
+/*var query = {
+  from: ['*'],
   select: ['*']
 };*/
 
@@ -118,6 +125,7 @@ var query = {
   ],
   "constraintLogic": "A and B and C"
 }
+
 /*flymine.rows(query).then(function(rows) {
   console.log("No. of exons: " + rows.length);
   rows.forEach(function printRow(row) {
@@ -126,18 +134,42 @@ var query = {
   });
 });*/
 
-app.get("/", function (request, response) {
+
+/*var query = {
+  "where": [
+    {
+      "path": "Gene",
+      "op": "IN",
+      "value": "PL FBgg0001460: DEOXYRIBONUCLEASES I",
+      "code": "A"
+    }
+  ],
+  "title": "PL FBgg0001460: DEOXYRIBONUCLEASES I",
+  "from": "Gene",
+  "select": [
+    "Gene.secondaryIdentifier",
+    "Gene.symbol",
+    "Gene.primaryIdentifier",
+    "Gene.organism.name"
+  ],
+  "constraintLogic": "A"
+}*/
+
+app.get("/show", function (req, res) {
   flymine.rows(query).then(function(rows) {
   console.log("No. of exons: " + rows.length);
     rows.map(function printRow(row) {
       //console.log('test', "[" + row[0] + "] " + row[1] + ":" + row[2] + ".." + row[3]);
-      console.log('row', row)
-      response.send(rows);
+      console.log('row', rows)
+      res.send(rows);
     });
   });
 });
 
-
+/*
+app.get("/", (request, response) => {
+  response.send(flymine);
+})*/
 
 app.listen (port, () => {
 	console.log (`server is running on port ${port}`)
