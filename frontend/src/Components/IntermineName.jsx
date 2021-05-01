@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Dropdown from 'react-bootstrap/Dropdown';
-import DataTable from './DataTable';
-
+//import DataTable from './DataTable';
 
 
 const IntermineName = ({element}) => {
@@ -22,8 +21,7 @@ const IntermineName = ({element}) => {
         <Dropdown.Item as="button"  onClick={getUrl}>{element.name}</Dropdown.Item>
       </div>
      {/* {url ? 
-      <DataTable url={url} /> : <h1>Please choose one Intermine</h1>
-      
+     <DataTable url={url} /> : <h1>Please choose one Intermine</h1>
       }*/}
     </>
   );

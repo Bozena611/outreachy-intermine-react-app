@@ -7,8 +7,7 @@ const DataTable = () => {
   //console.log (url);
 
   const [minedata, setMinedata] = useState(); 
-  const [item, setItem] = useState();
-
+  
   useEffect(() => {
     fetch('http://localhost:4001/show')
       .then((res) => res.json())
@@ -37,14 +36,6 @@ const DataTable = () => {
   } else {
     return null
   }
-
-/*
-return (
-  <>
-    <p>Testing</p>
-  </>
-  )
-*/
 };
 
 export default DataTable;

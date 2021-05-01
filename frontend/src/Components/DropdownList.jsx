@@ -5,7 +5,6 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 
 const DropdownList = ({data}) => {
 	//console.log ('names', data[0]);
-
 	 
 	return (
 		<>

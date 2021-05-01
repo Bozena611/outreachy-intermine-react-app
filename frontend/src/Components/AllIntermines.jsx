@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import DropdownList from './DropdownList';
-import DataTable from './DataTable';
+
 
 const AllIntermines = () => {
 
@@ -18,9 +18,7 @@ const AllIntermines = () => {
 
 	return (
 		<div>
-			<h1>Test</h1>
 			<DropdownList data={intermineList}/>
-			<DataTable />
 		</div>
 	)
 }
