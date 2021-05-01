@@ -3,7 +3,7 @@ import IntermineName from './IntermineName';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 
 
-const ListofMines = ({data}) => {
+const DropdownList = ({data}) => {
 	//console.log ('names', data[0]);
 
 	 
@@ -19,5 +19,5 @@ const ListofMines = ({data}) => {
 	);
 };
 
-export default ListofMines;
+export default DropdownList;
 

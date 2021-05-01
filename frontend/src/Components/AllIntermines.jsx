@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import ListofMines from './ListofMines';
+import DropdownList from './DropdownList';
 import DataTable from './DataTable';
 
-const Intermines = () => {
+const AllIntermines = () => {
 
 	const [intermineList, setIntermineList] = useState([]);
 
@@ -19,10 +19,10 @@ const Intermines = () => {
 	return (
 		<div>
 			<h1>Test</h1>
-			<ListofMines data={intermineList}/>
+			<DropdownList data={intermineList}/>
 			<DataTable />
 		</div>
 	)
 }
 
-export default Intermines;
+export default AllIntermines;

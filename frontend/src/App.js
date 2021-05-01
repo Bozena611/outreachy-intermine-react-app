@@ -1,5 +1,5 @@
 import './App.css';
-import Intermines from './Components/Intermines';
+import AllIntermines from './Components/AllIntermines';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>INTERMINE REACT APP</h1>
-        <Intermines/>
+        <AllIntermines />
       </header>
     </div>
   );
