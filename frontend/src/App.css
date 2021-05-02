@@ -8,6 +8,7 @@
   /*width: 10px;
   height: auto;*/
   pointer-events: none;
+  margin-left: 0em;
 }
 
 .App-header {
@@ -22,6 +23,10 @@
   color: white;
 }
 
+.title {
+  color: white;
+  margin-bottom: 2em;
+}
 .table-flex {
   display: flex;
   justify-content: space-around;

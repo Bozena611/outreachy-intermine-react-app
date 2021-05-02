@@ -34,6 +34,7 @@ function App() {
           </div>
         </div>
         <div>
+        <h4 className="title">Data shown from FlyMine: Gene --> Orthologues</h4>
           <DataTable />
         </div>
       </div>
