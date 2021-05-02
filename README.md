@@ -3,7 +3,7 @@
 
 ### To test the app:
 
-- git clone https​://github.com/Bozena611/test-deploy-heroku-netlify.git
+- git clone https://github.com/Bozena611/outreachy-intermine-react-app.git
 
 ### Step 1
 - cd server
