@@ -26,7 +26,7 @@ const IntermineName = ({element}) => {
           setShow(false);
         }
       }
-  }, [name, url]);
+  }, [name, url, show]);
 
 
   return (
