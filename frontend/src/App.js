@@ -19,7 +19,6 @@ function App() {
         </div>
         <h2>Intermine Query Builder</h2>
         <h3>Test React App</h3>
-        
       </header>
       <div className="table-flex">
         <div className="left-panel">
@@ -34,7 +33,7 @@ function App() {
           </div>
         </div>
         <div>
-        <h4 className="title">Data shown from FlyMine: Gene --> Orthologues</h4>
+          <h4 className="title">Data shown from FlyMine: Gene --> Orthologues</h4>
           <DataTable />
         </div>
       </div>

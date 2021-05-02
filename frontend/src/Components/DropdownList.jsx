@@ -8,11 +8,13 @@ const DropdownList = ({data}) => {
 	 
 	return (
 		<>
-			<DropdownButton id="dropdown-basic-button" title="Choose Intermine">
+			<DropdownButton id="dropdown-basic-button"  title="Choose Intermine">
+  			<div className="side-scroll">
   			{data.map((element, i) => {
 					//console.log('map', element.name);
 					return <IntermineName key={i} element={element}/>
 				})}
+				</div>
 			</DropdownButton>
 		</>
 	);

@@ -18,16 +18,21 @@ const IntermineName = ({element}) => {
   
   useEffect(() => {
     if (show) {
-     alert(`Data shown from FlyMine, in v2 you will be connected to ${name}: ${url}`);
-     setShow(false);
-   }
+      if (name === "FlyMine") {
+        alert(`Data from FlyMine already shown on the screen`);
+        setShow(false);
+      } else {
+          alert(`Data shown from FlyMine, in v2 you will be connected to ${name}: ${url}`);
+          setShow(false);
+        }
+      }
   }, [name, url]);
 
 
   return (
     <>
       <div>
-        <Dropdown.Item as="button"  onClick={getUrl}>{element.name}</Dropdown.Item>
+        <Dropdown.Item as="button" onClick={getUrl}>{element.name}</Dropdown.Item>
       </div>
     </>
   );

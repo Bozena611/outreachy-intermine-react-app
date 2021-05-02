@@ -3,7 +3,7 @@ import React from 'react';
 const TableBody = ({element}) => {
 	//console.log ('element', element)
 
-return (
+  return (
     <>
       <tbody>
         <tr>

@@ -59,6 +59,11 @@
   /*align-items: center;*/
 }
 
+.side-scroll {
+  height: 500px;
+  overflow-y: scroll;
+}
+
 .dropdown-space {
   margin-bottom: 10vh;
 }
